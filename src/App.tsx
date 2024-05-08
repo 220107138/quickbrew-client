@@ -7,7 +7,7 @@ import { SingleItemPage } from './pages/SingleItemPage/ui/SingleItemPage';
 function App() {
   return (
     <React.Fragment>
-      <SingleItemPage></SingleItemPage>
+      <SingleItemPage id={0} name={'Latte'} type={'coffee'} description={'Latte description'} price={990}></SingleItemPage>
     </React.Fragment>
   );
 }
