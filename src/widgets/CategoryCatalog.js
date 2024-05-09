@@ -1,16 +1,42 @@
+import { useRef, useEffect } from 'react';
 import styles from './style_modules/CategoryCatalog.module.css';
 
 function CategoryCatalog(props) {
+    const cardRef = useRef(null);
+
+    useEffect(() => {
+        let bgImg;
+        switch (props.category) {
+            case 'tea':
+                bgImg = 'tea';
+                break;
+                case 'lemonade':
+                    bgImg = 'lemonade';
+                    break;
+                case 'snacks':
+                    bgImg = 'snacks';
+                    break;
+            default:
+                bgImg = 'coffee';
+        }
+        if (cardRef.current)
+            cardRef.current.style.backgroundImage = `url(/${bgImg}-bg.png)`;
+    }, [props.category]);
+
     return (
-        <main style={ styles.root }>
-            <h2 style={ styles.category }>
-                { props.category }
-            </h2>
-            <div style={ styles.slider }>
-                { props.children3 }
+        <section
+            className={ styles.root }
+            style={ props.style }
+        >
+            <div className={ styles.card }>
+                <div ref={ cardRef } className={ styles.layer }></div>
+                <h2 className={ styles.category }>{ props.category }</h2>
             </div>
-        </main>
-    )
+            <div className={ styles.slider }>
+                { props.children }
+            </div>
+        </section>
+    );
 }
 
 export default CategoryCatalog;

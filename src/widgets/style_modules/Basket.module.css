@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+
+.root {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin: 0 15px;
+    padding: 30px 15px;
+    border-left: 1px solid #666;
+    border-right: 1px solid #666;
+    overflow-y: hidden;
+}
+
+.root header, .root footer {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 20px;
+    font-size: 25px;
+    font-family: IBM Plex Mono, monospace;
+    font-weight: bold;
+    text-align: center;
+    color: #666;
+}
+.root header {
+    border-top: 2.5px dashed #666;
+}
+.root footer {
+    border-bottom: 2.5px dashed #666;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: scroll;
+}
+.container::-webkit-scrollbar {
+    display: none;
+}

@@ -1,15 +1,57 @@
 .root {
     display: flex;
-    flex-direction: column;
-    gap: 15px;
+    box-sizing: border-box;
+    gap: 10px;
+    max-width: 100%;
+    padding: 15px;
+    border-radius: 30px;
 }
 
-
+.category {
+    color: #444;
+    text-align: center;
+}
 
 .slider {
-    gap: 10px;
-    padding: 10px;
+    display: flex;
+    gap: 20px;
+    padding-left: 20px;
+    border-radius: 20px;
     overflow-x: scroll;
     overflow-y: hidden;
 
+}
+.slider::-webkit-scrollbar {
+    display: none;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 190px;
+    border-radius: 20px;
+    background-color: #243832;
+    overflow: hidden;
+}
+
+.layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: brightness(0.4);
+
+}
+
+.category {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    margin: 20px;
+    z-index: 1;
 }

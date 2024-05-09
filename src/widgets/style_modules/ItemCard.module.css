@@ -1,0 +1,54 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 150px;
+    padding: 18px;
+    padding-top: 60px;
+    border: 2px solid #f7f7f7;
+    border-radius: 20px;
+    background-color: #f7f7f7;
+    cursor: pointer;
+    transition: 0.5s linear;
+}
+.root:hover {
+    background-color: #efefef;
+}
+.root:active {
+    background-color: #e0e0e0;
+}
+.root:has(input:checked) {
+    border: 2px solid #243832;
+}
+
+.name {
+    font-size: 20px;
+    text-align: center;
+}
+
+.picture {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    width: 150px;
+    height: 75px;
+    padding-bottom: 25px;
+    border-radius: 20px;
+    background-color: #243832;
+}
+/* 
+.info {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+} */
+
+.price {
+    font-size: 14px;
+    text-align: center;
+    color: #666;
+}
+
+.root input {
+    display: none;
+}
