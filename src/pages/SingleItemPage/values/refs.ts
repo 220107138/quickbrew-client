@@ -1,0 +1,1 @@
+export const selectedOptions = { milk: null, sugar: null, topping: null };
