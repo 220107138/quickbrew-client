@@ -6,11 +6,17 @@ import { useState } from 'react';
 export function SingleItem(props: SingleItemResponse) {
     const [count, setCount] = useState(1);
       const header = (
-        <img
-          alt="Card"
-          style={{ width: '100%' }}
-          src="https://globalassets.starbucks.com/digitalassets/products/bev/SBX20190617_CaffeLatte.jpg?impolicy=1by1_wide_topcrop_630"
-        />
+        <div className='col-12 d-flex flex-md-column'>
+          <img
+            alt="Card"
+            className='col-7 col-md-12'
+            src="https://globalassets.starbucks.com/digitalassets/products/bev/SBX20190617_CaffeLatte.jpg?impolicy=1by1_wide_topcrop_630"
+          />
+          <div className='col-3 col-md-12 d-flex flex-column'>
+            <span className='fs-4 fw-bolder m-3'>{props.name}</span>
+            <span className='m-3'>{props.description}</span>
+          </div>
+        </div>
       );
     
       const footer = (
@@ -46,8 +52,8 @@ export function SingleItem(props: SingleItemResponse) {
       )
     
       return (
-        <div className='w-100' style={{height: '100vh'}}>
-          <Card title={props.name} subTitle={props.description} header={header} footer={footer} className='w-100 h-100 d-flex flex-column justify-content-between'></Card>
+        <div className='col-12'>
+          <Card header={header} footer={footer} className='w-100 h-100 d-flex flex-column'></Card>
         </div>
       );
     }
