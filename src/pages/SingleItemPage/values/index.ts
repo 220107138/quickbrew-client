@@ -13,3 +13,9 @@ export type Options = {
                 }[]
         }[]
 }
+
+export type Ingredient = {
+    name: string;   
+    type: string;
+    cost: number;
+}
