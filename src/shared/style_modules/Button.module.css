@@ -1,19 +1,25 @@
-.root {
-    padding: 10px;
-    font-size: 15px;
-    color: #e4e4e4;
+.textGreen, .textBlue, .textRed {
+    width: 100%;
     border: none;
-    border-radius: 10px;
-    background-color: #2c5ccc;
-}
-
-.text {
-    display: flex;
-    padding: 5px;
-    border: none;
-    border-radius: 10px;
+    border-radius: 5px;
+    font-size: 14px;
     background-color: transparent;
     transition: 0.3s ease-out;
+}
+.textGreen {
+    color: #0f766e;
+    background-color: #f0fdfa;
+    border: 0.25px solid #0f766e;
+}
+.textBlue {
+    color: #0369a1;
+    background-color: #f0f9ff;
+    border: 0.25px solid #0369a1;
+}
+.textRed {
+    color: #be185d;
+    background-color: #fdf2f8;
+    border: 0.25px solid #be185d;
 }
 
 .icon, .disabledIcon {

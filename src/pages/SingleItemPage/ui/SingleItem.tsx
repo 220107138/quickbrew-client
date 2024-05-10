@@ -32,15 +32,15 @@ export function SingleItem(props: SingleItemResponse) {
                     </span>
                 </div>
             </div>
-            <div className='w-100 pt-5'>
-                <button className='btn p-2 fs-6 fw-bolder' style={{backgroundColor: '#243832', color: '#e4e4e4', width: '100%'}}>Confirm</button>
-            </div>
-        </Card>
-      )
-    
-      return (
-        <div className='col-12'>
-          <Card header={header} footer={footer} className='w-100 h-100 d-flex flex-column'></Card>
+        <div className='w-100 pt-5'>
+            <button className='btn p-2 fs-6 fw-bolder' style={{backgroundColor: '#243832', color: '#e4e4e4', width: '100%'}}>Confirm</button>
         </div>
-      );
-    }
+    </Card>
+  )
+
+  return (
+    <div className='col-12'>
+      <Card header={header} footer={footer} className='w-100 h-100 d-flex flex-column'></Card>
+    </div>
+  );
+}

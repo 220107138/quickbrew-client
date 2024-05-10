@@ -1,24 +1,25 @@
 .root {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    gap: 7.5px;
     box-sizing: border-box;
     width: 100%;
-    padding: 10px;
-    padding-bottom: 5px;
-    border-radius: 15px;
-    background-color: #f5f5f5;
-    cursor: pointer;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
     transition: 0.5s;
 }
 .root:hover {
-    background-color: #eee;
-}
-.root:active {
-    background-color: #e0e0e0;
+    background-color: #f5f5f5;
 }
 
-.category, .price {
+.inner {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 5px;
+}
+.info {
     font-size: 14px;
     color: #666;
 }
