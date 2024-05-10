@@ -14,8 +14,8 @@
 .root header, .root footer {
     box-sizing: border-box;
     width: 100%;
-    padding: 20px;
-    font-size: 25px;
+    padding: 10px;
+    font-size: 20px;
     font-family: IBM Plex Mono, monospace;
     font-weight: bold;
     text-align: center;

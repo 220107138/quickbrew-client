@@ -1,8 +1,11 @@
 import { useRef, useEffect } from 'react';
 import styles from './style_modules/CategoryCatalog.module.css';
 
-function CategoryCatalog(props) {
-    const cardRef = useRef(null);
+function CategoryCatalog(props: {
+    category: string,
+    children: any
+}) {
+    const cardRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         let bgImg;
@@ -24,10 +27,7 @@ function CategoryCatalog(props) {
     }, [props.category]);
 
     return (
-        <section
-            className={ styles.root }
-            style={ props.style }
-        >
+        <section className={ styles.root }>
             <div className={ styles.card }>
                 <div ref={ cardRef } className={ styles.layer }></div>
                 <h2 className={ styles.category }>{ props.category }</h2>

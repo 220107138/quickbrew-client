@@ -1,6 +1,10 @@
 import styles from './style_modules/Button.module.css';
 
-function Button(props) {
+function Button(props: {
+    type: string,
+    onClick: () => void,
+    children: any
+}) {
     return (
         <button
             className={ styles[props.type] }

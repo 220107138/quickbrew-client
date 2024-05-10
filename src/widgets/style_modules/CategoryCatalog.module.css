@@ -14,7 +14,7 @@
 
 .slider {
     display: flex;
-    gap: 20px;
+    gap: 10px;
     padding-left: 20px;
     border-radius: 20px;
     overflow-x: scroll;
@@ -30,7 +30,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 190px;
+    min-width: 150px;
     border-radius: 20px;
     background-color: #243832;
     overflow: hidden;
@@ -47,11 +47,11 @@
 }
 
 .category {
-    font-size: 25px;
+    font-size: 22.5px;
     font-weight: bold;
     text-align: center;
     text-transform: uppercase;
     color: white;
-    margin: 20px;
+    margin: 12.5px;
     z-index: 1;
 }
