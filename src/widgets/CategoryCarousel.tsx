@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react';
 import './style_modules/CategoryCatalog.css';
 
 export interface Child {

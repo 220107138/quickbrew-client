@@ -2,6 +2,7 @@ import { Options } from "../values";
 import { CategoryCarousel } from "../../../widgets/CategoryCarousel";
 import { Child } from "../../../widgets/CategoryCarousel";
 import { useState, useEffect } from "react";
+import { usePriceRef } from "./SingleItem";
 
 export function SingleItemOptions(){
 
@@ -115,7 +116,7 @@ export function SingleItemOptions(){
     const [selectedItems, setSelectedItems] = useState<SelectedItems>({});
 
     const handleSelect = (categoryName: string, selectedChild: Child | null) => {
-      setSelectedItems((prevSelectedItems) => ({
+      setSelectedItems((prevSelectedItems) => ({  
         ...prevSelectedItems,
         [categoryName]: selectedChild,
       }));
