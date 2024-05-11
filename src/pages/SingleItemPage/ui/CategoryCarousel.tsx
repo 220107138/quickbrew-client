@@ -25,14 +25,16 @@ interface CategoryCarouselProps {
 export function CategoryCarousel({ category, selectedValue, onSelect, updatePrice }: CategoryCarouselProps) {
 
   const handleCardClick = (child: Addition) => {
-    console.log(selectedValue, child)
-    if (!selectedValue || selectedValue.id !== child.id) {
-      selectedValue = child
-      onSelect(child);
-      updatePrice(child.quantity);
-    } else if(selectedValue.id === child.id){
-      onSelect(null);
-      updatePrice(-child.quantity);
+    if(!selectedValue){
+      onSelect(child)
+      updatePrice(child.quantity)
+    } else if(selectedValue && selectedValue.id !== child.id){
+      onSelect(child)
+      updatePrice(-selectedValue.quantity)
+      updatePrice(child.quantity)
+    } else{
+      onSelect(null)
+      updatePrice(-child.quantity)
     }
   };
 
