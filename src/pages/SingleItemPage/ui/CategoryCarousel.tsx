@@ -1,11 +1,11 @@
 import { MenuItemResponse } from '../../../shared/values/types';
 import styles from '../../../widgets/style_modules/CategoryCatalog.module.css';
 
-interface Child {
+interface Addition {
+  type: string;
   id: number;
-  name: string;
-  image: string;
-  price: number;
+  addition: string;
+  quantity: number;
 }
 
 interface Category {
@@ -17,18 +17,20 @@ interface Category {
 
 interface CategoryCarouselProps {
   category: Category;
-  selectedValue: MenuItemResponse['additions'][0] | null;
-  onSelect: (child: MenuItemResponse['additions'][0] | null) => void;
+  selectedValue: Addition | null;
+  onSelect: (child: Addition| null) => void;
   updatePrice: (price: number) => void;
 }
 
 export function CategoryCarousel({ category, selectedValue, onSelect, updatePrice }: CategoryCarouselProps) {
 
-  const handleCardClick = (child: MenuItemResponse['additions'][0]) => {
+  const handleCardClick = (child: Addition) => {
+    console.log(selectedValue, child)
     if (!selectedValue || selectedValue.id !== child.id) {
+      selectedValue = child
       onSelect(child);
       updatePrice(child.quantity);
-    } else {
+    } else if(selectedValue.id === child.id){
       onSelect(null);
       updatePrice(-child.quantity);
     }
