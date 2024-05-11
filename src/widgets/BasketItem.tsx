@@ -1,19 +1,19 @@
 import Button from '../shared/Button';
-import { MenuItemResponse } from '../shared/values/types';
+import { BasketItemType } from '../shared/values/types';
 import styles from './style_modules/BasketItem.module.css';
 
 function BasketItem(props: {
-    item: MenuItemResponse,
-    onGreen: (item: MenuItemResponse) => void,
-    onBlue: (item: MenuItemResponse) => void,
-    onRed: (item: MenuItemResponse) => void
+    item: BasketItemType,
+    onGreen: (item: BasketItemType) => void,
+    onBlue: (item: BasketItemType) => void,
+    onRed: (item: BasketItemType) => void
 }) {
     return (
         <div className={ styles.root }>
             <div className={ styles.inner }>
                 <img
-                    src={ props.item.img }
-                    alt='selected'
+                    src={ props.item.image }
+                    alt={ props.item.name }
                 />
                 <span className={ styles.name }>
                     { props.item.name }
@@ -22,17 +22,19 @@ function BasketItem(props: {
                     { props.item.type }
                 </span>
                 <span className={ styles.info }>
-                    ${ props.item.price }
+                    ${ props.item.defaultPrice }
                 </span>
             </div>
 
-            { props.item.additions.map(add =>
-                <div className={ styles.inner }>
-                    <span className={ styles.info }>{ add.type }</span>
-                    <span className={ styles.info }>{ add.addition }</span>
-                    <span className={ styles.info }>{ add.quantity } g</span>
-                </div>
-            ) }
+            {
+                props.item.additions.map(addition =>
+                    <div className={ styles.inner }>
+                        <span className={ styles.info }>{ addition.type }</span>
+                        <span className={ styles.info }>{ addition.name }</span>
+                        <span className={ styles.info }>{ addition.price }</span>
+                    </div>
+                )
+            }
 
             <div className={ styles.inner }>
                 <Button
