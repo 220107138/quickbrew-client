@@ -1,26 +1,6 @@
-import { MenuItemResponse } from '../../../shared/values/types';
 import styles from '../../../widgets/style_modules/CategoryCatalog.module.css';
+import { Addition, CategoryCarouselProps } from '../values';
 
-interface Addition {
-  type: string;
-  id: number;
-  addition: string;
-  quantity: number;
-}
-
-interface Category {
-  id: number;
-  name: string;
-  image: string;
-  children: MenuItemResponse['additions'];
-}
-
-interface CategoryCarouselProps {
-  category: Category;
-  selectedValue: Addition | null;
-  onSelect: (child: Addition| null) => void;
-  updatePrice: (price: number) => void;
-}
 
 export function CategoryCarousel({ category, selectedValue, onSelect, updatePrice }: CategoryCarouselProps) {
 

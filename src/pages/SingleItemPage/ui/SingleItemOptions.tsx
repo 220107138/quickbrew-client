@@ -1,7 +1,7 @@
 import { Options } from "../values";
 import { CategoryCarousel } from "./CategoryCarousel";
 import { useState, useEffect } from "react";
-import { singleItem } from "../values";
+import { singleItem , Addition, TransformedAdditions} from "../values";
 
 interface SingleItemOptions {
     updatePrice: (price: number) => void
@@ -68,17 +68,6 @@ export function SingleItemOptions(props: SingleItemOptions){
                 ]
             }
         ]
-    }
-
-    interface Addition {
-        type: string;
-        id: number;
-        addition: string;
-        quantity: number;
-    }
-    
-    type TransformedAdditions = {
-        [key: string]: Addition;
     }
     
     function transformAdditionsToArray(additions: Addition[]): TransformedAdditions {

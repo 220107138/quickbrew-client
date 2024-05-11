@@ -1,8 +1,8 @@
-import { MenuItemResponse } from "../../../shared/values/types"
+import { Addition } from "../values"
 
 export interface Builder{
-    addMilk(milk: MenuItemResponse['additions'][0]): void
-    addToppings(topping: MenuItemResponse['additions'][0]): void
-    addSugar(sugar: MenuItemResponse['additions'][0]): void
-    setSize(topping: MenuItemResponse['additions'][0]): void
+    addMilk(milk: Addition): void
+    addToppings(topping: Addition): void
+    addSugar(sugar: Addition): void
+    setSize(topping: Addition): void
 }
