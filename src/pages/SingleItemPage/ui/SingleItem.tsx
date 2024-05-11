@@ -1,14 +1,13 @@
 import { Card } from 'primereact/card';
-import { SingleItemResponse } from '../api/types';
-import { useRef } from 'react';
 
-export function usePriceRef() {
-  return useRef<number | null>(null);
+type props = {
+  id: number,
+  price: number,
+  updatePrice(price: number): void
 }
 
-export function SingleItem(props: SingleItemResponse) {
-  const price = usePriceRef();
-  price.current = props.price
+export function SingleItem(props: props) {
+
       const header = (
         <div className='col-12 d-flex flex-md-column'>
           <img
@@ -17,8 +16,8 @@ export function SingleItem(props: SingleItemResponse) {
             src="https://globalassets.starbucks.com/digitalassets/products/bev/SBX20190617_CaffeLatte.jpg?impolicy=1by1_wide_topcrop_630"
           />
           <div className='col-3 col-md-12 d-flex flex-column'>
-            <span className='fs-4 fw-bolder m-3'>{props.name}</span>
-            <span className='m-3'>{props.description}</span>
+            <span className='fs-4 fw-bolder m-3'>Latte</span>
+            <span className='m-3'>description</span>
           </div>
         </div>
       );
@@ -28,7 +27,7 @@ export function SingleItem(props: SingleItemResponse) {
             <div className='d-flex justify-content-between align-items-center'>
                 <div className='w-50  text-end'>
                     <span className='fs-4 fw-bolder'>
-                        {price.current} ТГ
+                        {props.price} ТГ
                     </span>
                 </div>
             </div>

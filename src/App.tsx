@@ -4,14 +4,25 @@ import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 import MenuPage from './pages/MenuPage/ui/MenuPage';
 import { SingleItemPage } from './pages/SingleItemPage/ui/SingleItemPage';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import {createBrowserRouter, RouterProvider } from "react-router-dom";
 import CategoryCatalog from './widgets/CategoryCatalog';
 
 function App() {
+  
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <MenuPage/>,
+    },
+    {
+      path: "/singleItem/:id",
+      element: <SingleItemPage/>,
+    },
+  ]);
+
   return (
     <React.Fragment>
-      <MenuPage />
-      {/* <SingleItemPage id={0} name={'Latte'} type={'coffee'} description={'Latte description'} price={990}></SingleItemPage> */}
+      <RouterProvider router={router} />
     </React.Fragment>
   );
 }

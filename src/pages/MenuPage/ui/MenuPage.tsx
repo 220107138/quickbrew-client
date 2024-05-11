@@ -355,7 +355,7 @@ function MenuPage() {
                 { basketItems.map(item => <BasketItem
                     item={ item }
                     onGreen={ (item) => duplicateItemInBasket(item) }
-                    onBlue={ () => console.log('item') }
+                    onBlue={(item) => window.location.href = `/singleItem/${1}`}
                     onRed={ (item) => removeSingleItemFromBasket(item) }
                 />) }
             </Basket>
