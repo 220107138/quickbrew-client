@@ -1,38 +1,20 @@
-import { MenuItemResponse } from '../../../shared/values/types';
 import styles from '../../../widgets/style_modules/CategoryCatalog.module.css';
+import { Addition, CategoryCarouselProps } from '../values';
 
-interface Addition {
-  type: string;
-  id: number;
-  addition: string;
-  quantity: number;
-}
-
-interface Category {
-  id: number;
-  name: string;
-  image: string;
-  children: MenuItemResponse['additions'];
-}
-
-interface CategoryCarouselProps {
-  category: Category;
-  selectedValue: Addition | null;
-  onSelect: (child: Addition| null) => void;
-  updatePrice: (price: number) => void;
-}
 
 export function CategoryCarousel({ category, selectedValue, onSelect, updatePrice }: CategoryCarouselProps) {
 
   const handleCardClick = (child: Addition) => {
-    console.log(selectedValue, child)
-    if (!selectedValue || selectedValue.id !== child.id) {
-      selectedValue = child
-      onSelect(child);
-      updatePrice(child.quantity);
-    } else if(selectedValue.id === child.id){
-      onSelect(null);
-      updatePrice(-child.quantity);
+    if(!selectedValue){
+      onSelect(child)
+      updatePrice(child.quantity)
+    } else if(selectedValue && selectedValue.id !== child.id){
+      onSelect(child)
+      updatePrice(-selectedValue.quantity)
+      updatePrice(child.quantity)
+    } else{
+      onSelect(null)
+      updatePrice(-child.quantity)
     }
   };
 

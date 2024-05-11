@@ -1,7 +1,7 @@
 import { Options } from "../values";
 import { CategoryCarousel } from "./CategoryCarousel";
 import { useState, useEffect } from "react";
-import { singleItem } from "../values";
+import { singleItem , Addition, TransformedAdditions} from "../values";
 
 interface SingleItemOptions {
     updatePrice: (price: number) => void
@@ -19,8 +19,8 @@ export function SingleItemOptions(props: SingleItemOptions){
                     {
                         type: 'milk',
                         id: 1,
-                        addition: 'Coconut milk',
-                        quantity: 400,
+                        addition: 'Cow milk',
+                        quantity: 0,
                         image: 'https://nutritionrefined.com/wp-content/uploads/2017/06/coconut-milk-featured.jpg',
                     },
                     {
@@ -68,17 +68,6 @@ export function SingleItemOptions(props: SingleItemOptions){
                 ]
             }
         ]
-    }
-
-    interface Addition {
-        type: string;
-        id: number;
-        addition: string;
-        quantity: number;
-    }
-    
-    type TransformedAdditions = {
-        [key: string]: Addition;
     }
     
     function transformAdditionsToArray(additions: Addition[]): TransformedAdditions {
