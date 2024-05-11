@@ -1,7 +1,11 @@
 export type SingleItemResponse = {
     id: number,
-    type: string,
     name: string,
-    description: string,
-    price: number
+    price: number,
+    description: string | undefined,
+    image_url: string
+}
+
+export type SingleItemRequest = {
+    id: number
 }

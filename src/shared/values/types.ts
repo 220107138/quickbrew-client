@@ -3,11 +3,13 @@ export type MenuItemResponse = {
     name: string,
     type: string,
     price: number,
+    description?: string,
     img: string,
     additions: {
         type: string,
         id: number,
         addition: string,
-        quantity: number
+        quantity: number,
+        image?: string
     }[]
 };
