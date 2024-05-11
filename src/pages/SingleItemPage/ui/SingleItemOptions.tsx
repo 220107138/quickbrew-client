@@ -1,4 +1,3 @@
-import { MenuItemResponse } from "../../../shared/values/types";
 import { Options } from "../values";
 import { CategoryCarousel } from "./CategoryCarousel";
 import { useState, useEffect } from "react";

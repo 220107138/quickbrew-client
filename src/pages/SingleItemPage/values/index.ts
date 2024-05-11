@@ -1,5 +1,3 @@
-import { MenuItemResponse } from "../../../shared/values/types"
-
 export type Options = {
     options: 
         {
@@ -23,7 +21,7 @@ export type Ingredient = {
     cost: number;
 }
 
-export let singleItem: MenuItemResponse = {
+export let singleItem = {
     id: 1,
     name: 'Latte',
     type: 'coffee',
