@@ -1,3 +1,4 @@
+import Button from '../shared/Button';
 import styles from './style_modules/Basket.module.css';
 
 function Basket(props: {
@@ -13,7 +14,15 @@ function Basket(props: {
             <div className={ styles.container }>
                 { props.children }
             </div>
-            <footer>Total: ${ props.price }</footer>
+            <footer>
+                <span className={ styles.desktop }>Total: ${ props.price }</span>
+                <Button
+                    type='textGreen'
+                    onClick={ () => console.log('Thanks! Come again!') }
+                >
+                    Buy
+                </Button>
+            </footer>
         </section>
     );
 }

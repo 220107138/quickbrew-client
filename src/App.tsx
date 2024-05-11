@@ -5,7 +5,6 @@ import 'primeicons/primeicons.css';
 import MenuPage from './pages/MenuPage/ui/MenuPage';
 import { SingleItemPage } from './pages/SingleItemPage/ui/SingleItemPage';
 import {createBrowserRouter, RouterProvider } from "react-router-dom";
-import CategoryCatalog from './widgets/CategoryCatalog';
 
 function App() {
   
