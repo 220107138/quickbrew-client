@@ -371,7 +371,7 @@ function MenuPage() {
                     key={ item.id }
                     item={ item }
                     onGreen={ (item) => duplicateItemInBasket(item) }
-                    onBlue={ () => console.log('item') }
+                    onBlue={(item) => window.location.href = `/singleItem/${1}`}
                     onRed={ (item) => removeSingleItemFromBasket(item) }
                 />) }
             </Basket>
