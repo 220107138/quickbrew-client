@@ -19,7 +19,21 @@
     align-items: center;
     gap: 5px;
 }
+.inner img {
+    max-width: 35px;
+    max-height: 35px;
+}
+
 .info {
     font-size: 14px;
     color: #666;
+}
+
+@media (max-width: 800px) {
+    .name {
+        font-size: 15px;
+    }
+    .info {
+        font-size: 12.5px;
+    }
 }

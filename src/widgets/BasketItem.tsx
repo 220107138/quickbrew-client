@@ -14,7 +14,6 @@ function BasketItem(props: {
                 <img
                     src={ props.item.img }
                     alt='selected'
-                    height='40px'
                 />
                 <span className={ styles.name }>
                     { props.item.name }

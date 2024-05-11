@@ -6,7 +6,10 @@ function Basket(props: {
 }) {
     return (
         <section className={ styles.root }>
-            <header>Your Order</header>
+            <header>
+                Your Order
+                <span className={ styles.mobile }> ${ props.price }</span>
+            </header>
             <div className={ styles.container }>
                 { props.children }
             </div>

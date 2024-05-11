@@ -1,38 +1,33 @@
-import { useRef, useEffect } from 'react';
 import styles from './style_modules/CategoryCatalog.module.css';
 
 function CategoryCatalog(props: {
     category: string,
     children: any
 }) {
-    const cardRef = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        let bgImg;
-        switch (props.category) {
-            case 'tea':
-                bgImg = 'tea';
-                break;
-                case 'lemonade':
-                    bgImg = 'lemonade';
-                    break;
-                case 'snacks':
-                    bgImg = 'snacks';
-                    break;
-            default:
-                bgImg = 'coffee';
-        }
-        if (cardRef.current)
-            cardRef.current.style.backgroundImage = `url(/${bgImg}-bg.png)`;
-    }, [props.category]);
+    const getCategory = (category: string) => {
+        if (category === 'tea' || 'lemonade' || 'snacks')
+            return props.category;
+        else
+            return 'coffee';
+    }
 
     return (
         <section className={ styles.root }>
-            <div className={ styles.card }>
-                <div ref={ cardRef } className={ styles.layer }></div>
-                <h2 className={ styles.category }>{ props.category }</h2>
+            <div className={ styles.desktopCard }>
+                <div
+                    className={ styles.layer }
+                    style={{ backgroundImage: `url(/${getCategory(props.category)}-bg.png)`}}
+                ></div>
+                <h2 className={ styles.category }>{ getCategory(props.category) }</h2>
             </div>
             <div className={ styles.slider }>
+                <div className={ styles.mobileCard }>
+                    <div
+                        className={ styles.layer }
+                        style={{ backgroundImage: `url(/${getCategory(props.category)}-bg.png)`}}
+                    ></div>
+                    <h2 className={ styles.category }>{ getCategory(props.category) }</h2>
+                </div>
                 { props.children }
             </div>
         </section>

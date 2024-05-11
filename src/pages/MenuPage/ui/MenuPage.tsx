@@ -8,7 +8,7 @@ import styles from './MenuPage.module.css';
 import { useState } from 'react';
 
 function MenuPage() {
-    const [basketItems, setBasketItems] = useState<MenuItemResponse[]>([]); 
+    const [basketItems, setBasketItems] = useState<MenuItemResponse[]>([]);
     const data: MenuItemResponse[] = [
         {
             id: 0,
@@ -225,6 +225,48 @@ function MenuPage() {
             name: 'Latte',
             img: '/img.png',
             type: 'lemonade',
+            price: 2.99,
+            additions: [
+                {
+                    type: 'milk',
+                    id: 1,
+                    addition: 'cow_milk',
+                    quantity: 50
+                },
+                {
+                    type: 'sugar',
+                    id: 1,
+                    addition: 'just sugar',
+                    quantity: 50
+                }
+            ]
+        },
+        {
+            id: 11,
+            name: 'Latte',
+            img: '/img.png',
+            type: 'tea',
+            price: 2.99,
+            additions: [
+                {
+                    type: 'milk',
+                    id: 1,
+                    addition: 'cow_milk',
+                    quantity: 50
+                },
+                {
+                    type: 'sugar',
+                    id: 1,
+                    addition: 'just sugar',
+                    quantity: 50
+                }
+            ]
+        },
+        {
+            id: 12,
+            name: 'Latte',
+            img: '/img.png',
+            type: 'snacks',
             price: 2.99,
             additions: [
                 {

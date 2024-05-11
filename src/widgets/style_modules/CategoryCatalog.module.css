@@ -4,7 +4,6 @@
     gap: 10px;
     max-width: 100%;
     padding: 15px;
-    border-radius: 30px;
 }
 
 .category {
@@ -25,7 +24,7 @@
     display: none;
 }
 
-.card {
+.desktopCard, .mobileCard {
     position: relative;
     display: flex;
     justify-content: center;
@@ -34,6 +33,9 @@
     border-radius: 20px;
     background-color: #243832;
     overflow: hidden;
+}
+.mobileCard {
+    display: none;
 }
 
 .layer {
@@ -54,4 +56,37 @@
     color: white;
     margin: 12.5px;
     z-index: 1;
+}
+
+@media (max-width: 950px) {
+    .root {
+        padding: 7.5px;
+    }
+
+    .slider {
+        gap: 7.5px;
+        padding-left: 10px;
+        border-radius: 15px;
+    }
+
+    .desktopCard, .mobileCard {
+        min-width: 115px;
+        border-radius: 15px;
+    }
+    .category {
+        font-size: 17px;
+        margin: 7.5px;
+    }
+}
+
+@media (max-width: 500px) {
+    .slider {
+        padding-left: 0;
+    }
+    .desktopCard {
+        display: none;
+    }
+    .mobileCard {
+        display: flex;
+    }
 }

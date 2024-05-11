@@ -49,3 +49,29 @@
 .root input {
     display: none;
 }
+
+@media (max-width: 950px) {
+    .root {
+        padding: 5px;
+        padding-top: 50px;
+        border-width: 1px;
+        border-radius: 15px;
+    }
+
+    .picture {
+        width: 100px;
+        height: 60px;
+        padding-bottom: 10px;
+    }
+    .picture img {
+        max-width: 90px;
+        max-height: 100px;
+    }
+
+    .name {
+        font-size: 15px;
+    }
+    .price {
+        font-size: 10px;
+    }
+}
