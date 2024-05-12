@@ -106,10 +106,10 @@ export function SingleItemOptions(props: SingleItemOptions){
         <div>
             {items.options.map((item) => (
             <CategoryCarousel
-            category={item}
-            selectedValue={selectedItems[item.name]}
-            onSelect={(selectedChild) => handleSelect(item.name, selectedChild)}
-            updatePrice={props.updatePrice}
+                category={item}
+                selectedValue={selectedItems[item.name]}
+                onSelect={(selectedChild) => handleSelect(item.name, selectedChild)}
+                updatePrice={props.updatePrice}
             />
         ))}
         </div>

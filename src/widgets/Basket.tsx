@@ -15,7 +15,7 @@ function Basket(props: {
                 { props.children }
             </div>
             <footer>
-                <span className={ styles.desktop }>Total: ${ props.price }</span>
+                <span className={ styles.desktop }>Total: { props.price } ₸</span>
                 <Button
                     type='textGreen'
                     onClick={ () => console.log('Thanks! Come again!') }

@@ -5,25 +5,25 @@ import 'primeicons/primeicons.css';
 import MenuPage from './pages/MenuPage/ui/MenuPage';
 import { SingleItemPage } from './pages/SingleItemPage/ui/SingleItemPage';
 import {createBrowserRouter, RouterProvider } from "react-router-dom";
+import OrderProvider from './shared/values/OrderProvider';
 
-function App() {
-  
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <MenuPage/>,
-    },
-    {
-      path: "/singleItem/:id",
-      element: <SingleItemPage/>,
-    },
-  ]);
+function App() {    
+    const router = createBrowserRouter([
+        {
+            path: "/",
+            element: <MenuPage/>,
+        },
+        {
+            path: "/singleItem/:id",
+            element: <SingleItemPage/>,
+        },
+    ]);
 
-  return (
-    <React.Fragment>
-      <RouterProvider router={router} />
-    </React.Fragment>
-  );
+    return (
+        <OrderProvider>
+            <RouterProvider router={router} />
+        </OrderProvider>
+    );
 }
 
 export default App;

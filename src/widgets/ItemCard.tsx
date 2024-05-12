@@ -1,3 +1,4 @@
+import { SelectedAddition } from '../shared/values/types';
 import styles from './style_modules/ItemCard.module.css';
 
 function ItemCard(props: {
@@ -5,6 +6,7 @@ function ItemCard(props: {
     name: string,
     price: number,
     img: string,
+    additions: SelectedAddition[]
     onTrue: () => void,
     onFalse: () => void
 }) {
@@ -20,7 +22,7 @@ function ItemCard(props: {
                 { props.name }
             </span>
             <span className={ styles.price }>
-                ${ props.price }
+                { props.additions.reduce((recursion, addition) => recursion + addition.price, props.price) } ₸
             </span>
 
             <input
