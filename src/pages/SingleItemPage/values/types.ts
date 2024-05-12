@@ -1,26 +1,16 @@
-export interface Addition {
-    type: string;
-    id: number;
-    addition: string;
-    quantity: number;
-    image?: string
-  }
-
-export type TransformedAdditions = {
-    [key: string]: Addition;
-}
+import { SelectedAddition } from "../../../shared/values/types";
   
 export interface Category {
    id: number;
    name: string;
    image: string;
-   children: Addition[];
+   children: SelectedAddition[];
 }
   
 export interface CategoryCarouselProps {
     category: Category;
-    selectedValue: Addition | null;
-    onSelect: (child: Addition| null) => void;
+    selectedValue: SelectedAddition | null;
+    onSelect: (child: SelectedAddition| null) => void;
     updatePrice: (price: number) => void;
 }
 
@@ -34,8 +24,8 @@ export type Options = {
                 {
                     type: string,
                     id: number,
-                    addition: string,
-                    quantity: number,
+                    name: string,
+                    price: number,
                     image?: string
                 }[]
         }[]

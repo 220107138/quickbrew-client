@@ -1,5 +1,8 @@
 import { Card } from 'primereact/card';
-import { BasketItemType } from '../../../shared/values/types';
+import { BasketItemType, SelectedAddition } from '../../../shared/values/types';
+import { buildDrink } from '../utils';
+import { selectedAdditions } from './SingleItemOptions';
+import { Link } from 'react-router-dom';
 
 interface props{
   item: BasketItemType | undefined,
@@ -7,6 +10,10 @@ interface props{
 }
 
 export function SingleItem(item: props) {
+
+  const builderFunction = (drink: BasketItemType, additions: SelectedAddition[]) => {
+    console.log(buildDrink(drink, additions), 'builder result')
+  }
 
       const header = (
         <div className='col-12 d-flex flex-md-column'>
@@ -32,7 +39,9 @@ export function SingleItem(item: props) {
                 </div>
             </div>
         <div className='w-100 pt-5'>
-            <button className='btn p-2 fs-6 fw-bolder' style={{backgroundColor: '#243832', color: '#e4e4e4', width: '100%'}}>Confirm</button>
+          <Link to={ '/' }>
+            <button className='btn p-2 fs-6 fw-bolder' onClick={() => item.item && builderFunction(item.item, selectedAdditions)}  style={{backgroundColor: '#243832', color: '#e4e4e4', width: '100%'}}>Confirm</button>
+          </Link>
         </div>
     </Card>
   )
