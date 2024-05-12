@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom';
 import { useState } from "react";
 import { useOrder } from "../../../shared/values/OrderProvider";
 import { BasketItemType } from "../../../shared/values/types";
-import { DrinkBuilder } from "../pattern/DrinkBuilder";
 
 export function SingleItemPage() {
   const { id } = useParams(); 
@@ -14,7 +13,7 @@ export function SingleItemPage() {
   let defaultPrice: number | undefined;
   
   if (item) {
-      defaultPrice = item.defaultPrice;
+      defaultPrice = item.priceWithAdditions;
   }
   
   const [price, setPrice] = useState<number | undefined>(defaultPrice);

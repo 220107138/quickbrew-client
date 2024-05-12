@@ -132,22 +132,31 @@ export function SingleItemOptions(props: SingleItemOptions){
     const [selectedItems, setSelectedItems] = useState<SelectedAddition[]>(props.additions ? props.additions : []);
 
     const handleSelect = (selectedChild: SelectedAddition | null) => {
-      if (selectedChild) {
-        const existingItemIndex = selectedItems.findIndex(item => item.type === selectedChild.type);
-        if (existingItemIndex !== -1) {
-          const newSelectedItems = [...selectedItems];
-          newSelectedItems[existingItemIndex] = selectedChild;
-          setSelectedItems(newSelectedItems);
-        } else {
-          setSelectedItems(prevSelectedItems => [...prevSelectedItems, selectedChild]);
+        if (selectedChild) {
+            const existingItemIndex = selectedItems.findIndex(item => item.type === selectedChild.type);
+            const existsInList = selectedItems.findIndex(el => el.type === selectedChild.type && el.id === selectedChild.id);
+    
+            if (existingItemIndex !== -1) {
+                const newSelectedItems = [...selectedItems];
+                if (existsInList !== -1) {
+                    newSelectedItems.splice(existsInList, 1);
+                    setSelectedItems(newSelectedItems);
+                } else {
+                    newSelectedItems[existingItemIndex] = selectedChild;
+                    setSelectedItems(newSelectedItems);
+                }
+            } else {
+                setSelectedItems(prevSelectedItems => [...prevSelectedItems, selectedChild]);
+            }
         }
-      } else {
-        setSelectedItems([]);
-      }
     };
+    
+      
+      
   
     useEffect(() => {
         selectedAdditions = selectedItems
+        console.log(selectedItems, 'selectedItems')
     }, [selectedItems]);
   
     return (
