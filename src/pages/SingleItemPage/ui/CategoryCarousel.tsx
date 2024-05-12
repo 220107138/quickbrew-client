@@ -1,20 +1,15 @@
+import React, { useState, useEffect } from 'react';
 import styles from '../../../widgets/style_modules/CategoryCatalog.module.css';
 import { Addition, CategoryCarouselProps } from '../values';
-
 
 export function CategoryCarousel({ category, selectedValue, onSelect, updatePrice }: CategoryCarouselProps) {
 
   const handleCardClick = (child: Addition) => {
-    if(!selectedValue){
-      onSelect(child)
-      updatePrice(child.quantity)
-    } else if(selectedValue && selectedValue.id !== child.id){
-      onSelect(child)
-      updatePrice(-selectedValue.quantity)
-      updatePrice(child.quantity)
-    } else{
-      onSelect(null)
-      updatePrice(-child.quantity)
+    onSelect(child);
+    if (!selectedValue || selectedValue.type !== child.type) {
+      updatePrice(child.quantity);
+    } else {
+      updatePrice(-selectedValue.quantity + child.quantity);
     }
   };
 
