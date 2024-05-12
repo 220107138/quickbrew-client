@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { useState } from "react";
 import { useOrder } from "../../../shared/values/OrderProvider";
 import { BasketItemType } from "../../../shared/values/types";
+import { DrinkBuilder } from "../pattern/DrinkBuilder";
 
 export function SingleItemPage() {
   const { id } = useParams(); 
@@ -28,7 +29,7 @@ export function SingleItemPage() {
         <SingleItem item={item} price={price}></SingleItem>
       </div>
       <div className="col-12 col-md-9 mt-4">
-        <SingleItemOptions updatePrice={updatePrice}></SingleItemOptions>
+        <SingleItemOptions additions={item?.additions} updatePrice={updatePrice}></SingleItemOptions>
       </div>
     </div>
   );

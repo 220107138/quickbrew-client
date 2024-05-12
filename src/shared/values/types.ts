@@ -22,5 +22,6 @@ export type SelectedAddition = {
     id: number,
     name: string,
     type: string,
-    price: number
+    price: number,
+    image? : string
 };

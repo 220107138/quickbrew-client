@@ -1,37 +1,23 @@
+import { SelectedAddition } from './../../../shared/values/types';
 import { Builder } from "./Builder";
-import { Addition } from "../values";
+import { BasketItemType } from './../../../shared/values/types';
 
-export class TeaBuilder implements Builder{
+export class DrinkBuilder implements Builder{
 
-    private id: number
-    private name: string
-    private price: number
-    private additions: Addition[]
+    private drink: BasketItemType
 
-    constructor(id: number, name: string, price: number, additions: Addition[]){
-        this.id = id
-        this.name = name
-        this.price = price
-        this.additions = additions
+    constructor(drink: BasketItemType){
+        this.drink = drink
     }
 
-    addMilk(milk: Addition[][0]): void {
-        this.additions.push(milk);
-        this.price += milk.quantity
+    addAdditions(additions: SelectedAddition[]): void {
+        this.drink.additions = additions
+        additions.forEach((addition) =>{
+            this.drink.priceWithAdditions += addition.price
+        })
     }
 
-    addToppings(topping: Addition[][0]): void {
-        this.additions.push(topping);
-        this.price += topping.quantity
-    }
-
-    addSugar(sugar: Addition[][0]): void {
-        this.additions.push(sugar);
-        this.price += sugar.quantity
-    }
-
-    setSize(size: Addition[][0]): void {
-        this.additions.push(size);
-        this.price += size.quantity
+    getDrink(){
+        return this.drink;
     }
 }

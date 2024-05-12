@@ -1,16 +1,23 @@
 import styles from '../../../widgets/style_modules/CategoryCatalog.module.css';
-import { Addition, CategoryCarouselProps } from '../values';
+import { CategoryCarouselProps } from '../values';
+import { SelectedAddition } from '../../../shared/values/types';
 
 export function CategoryCarousel({ category, selectedValue, onSelect, updatePrice }: CategoryCarouselProps) {
 
-  const handleCardClick = (child: Addition) => {
-    onSelect(child);
-    if (!selectedValue || selectedValue.type !== child.type) {
-      updatePrice(child.quantity);
-    } else {
-      updatePrice(-selectedValue.quantity + child.quantity);
+  const handleCardClick = (child: SelectedAddition) => {
+    if(!selectedValue){
+      onSelect(child)
+      updatePrice(child.price)
+    } else if(selectedValue && selectedValue.id !== child.id){
+      onSelect(child)
+      updatePrice(-selectedValue.price)
+      updatePrice(child.price)
+    } else{
+      onSelect(null)
+      updatePrice(-child.price)
     }
   };
+
 
   return (
     <main>
@@ -29,10 +36,10 @@ export function CategoryCarousel({ category, selectedValue, onSelect, updatePric
           >
             <div className="card" style={{ backgroundColor: '#f5f5f5' }}>
               <img src={child.image} alt={child.type} className='w-100' />
-              <p style={{ color: '#243832', fontSize: '16px', fontWeight: 'bold' }}>{child.addition}</p>
+              <p style={{ color: '#243832', fontSize: '16px', fontWeight: 'bold' }}>{child.name}</p>
             </div>
             <div style={{ color: '#f5f5f5', backgroundColor: '#243832', zIndex: '999', borderRadius: '10px', fontSize: '20px', fontWeight: 'bold', position: 'absolute', bottom: '-25px', right: '-20px', padding: '8px' }}>
-              + {child.quantity}
+              + {child.price}
             </div>
           </div>
         ))}
