@@ -12,9 +12,13 @@ export class DrinkBuilder implements Builder{
 
     addAdditions(additions: SelectedAddition[]): void {
         this.drink.additions = additions
-        additions.forEach((addition) =>{
-            this.drink.priceWithAdditions += addition.price
-        })
+        this.setPrice(additions)
+    }
+
+    setPrice(additions: SelectedAddition[]){
+        let totalPrice = this.drink.defaultPrice;
+        additions.forEach((addition) => totalPrice += addition.price)
+        this.drink.priceWithAdditions = totalPrice
     }
 
     getDrink(){
