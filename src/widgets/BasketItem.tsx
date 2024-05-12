@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Button from '../shared/Button';
 import { BasketItemType } from '../shared/values/types';
 import styles from './style_modules/BasketItem.module.css';
@@ -5,7 +6,6 @@ import styles from './style_modules/BasketItem.module.css';
 function BasketItem(props: {
     item: BasketItemType,
     onGreen: (item: BasketItemType) => void,
-    onBlue: (item: BasketItemType) => void,
     onRed: (item: BasketItemType) => void
 }) {
     return (
@@ -22,7 +22,7 @@ function BasketItem(props: {
                     { props.item.type }
                 </span>
                 <span className={ styles.info }>
-                    ${ props.item.defaultPrice }
+                    { props.item.defaultPrice } ₸
                 </span>
             </div>
 
@@ -43,12 +43,14 @@ function BasketItem(props: {
                 >
                     Duplicate
                 </Button>
-                <Button
-                    type='textBlue'
-                    onClick={ () => props.onBlue(props.item) }
-                >
-                    Edit
-                </Button>
+                <Link to={ `/singleItem/${props.item.id}` }>
+                    <Button
+                        type='textBlue'
+                        onClick={ () => console.log('Wait...') }
+                    >
+                        Edit
+                    </Button>
+                </Link>
                 <Button
                     type='textRed'
                     onClick={ () => props.onRed(props.item) }

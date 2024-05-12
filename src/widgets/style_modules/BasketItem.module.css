@@ -13,6 +13,11 @@
     background-color: #f5f5f5;
 }
 
+.root a {
+    display: flex;
+    width: 100%;
+}
+
 .inner {
     display: flex;
     justify-content: space-around;

@@ -9,7 +9,7 @@ function Basket(props: {
         <section className={ styles.root }>
             <header>
                 Your Order
-                <span className={ styles.mobile }> ${ props.price }</span>
+                <span className={ styles.mobile }> { props.price } ₸</span>
             </header>
             <div className={ styles.container }>
                 { props.children }
