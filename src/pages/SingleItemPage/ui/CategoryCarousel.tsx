@@ -12,8 +12,9 @@ export function CategoryCarousel({ category, selectedValue, onSelect, updatePric
       onSelect(child)
       updatePrice(-selectedValue.price)
       updatePrice(child.price)
-    } else{
-      onSelect(null)
+    } else if(selectedValue && selectedValue.id === child.id){
+      console.log('to remoove')
+      onSelect(child)
       updatePrice(-child.price)
     }
   };
