@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react';
 import styles from '../../../widgets/style_modules/CategoryCatalog.module.css';
 import { Addition, CategoryCarouselProps } from '../values';
 

@@ -31,7 +31,7 @@ function BasketItem(props: {
                     <div className={ styles.inner }>
                         <span className={ styles.info }>{ addition.type }</span>
                         <span className={ styles.info }>{ addition.name }</span>
-                        <span className={ styles.info }>{ addition.price }</span>
+                        <span className={ styles.info }>{ addition.price } ₸</span>
                     </div>
                 )
             }

@@ -7,7 +7,7 @@ import { BasketItemType } from "../../../shared/values/types";
 
 export function SingleItemPage() {
   const { id } = useParams(); 
-  const { order, setOrder } = useOrder();
+  const { order } = useOrder();
   
   let item: BasketItemType | undefined = order.find((el) => el.id === Number(id));
   let defaultPrice: number | undefined;

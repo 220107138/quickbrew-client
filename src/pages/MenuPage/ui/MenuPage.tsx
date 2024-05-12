@@ -6,6 +6,7 @@ import { MenuProductResponse, BasketItemType } from '../../../shared/values/type
 import Prototype from '../prtotype/Prototype';
 import styles from './MenuPage.module.css';
 import { useOrder } from '../../../shared/values/OrderProvider';
+import { useEffect } from 'react';
 
 function MenuPage() {
     const { order, setOrder } = useOrder();
@@ -20,14 +21,14 @@ function MenuPage() {
                 {
                     type: 'milk',
                     id: 1,
-                    name: 'cow_milk',
-                    price: 50
+                    name: 'Cow Milk',
+                    price: 0
                 },
                 {
                     type: 'sugar',
                     id: 1,
-                    name: 'just sugar',
-                    price: 50
+                    name: 'Just Sugar',
+                    price: 0
                 }
             ]
         },
@@ -41,14 +42,14 @@ function MenuPage() {
                 {
                     type: 'milk',
                     id: 1,
-                    name: 'cow_milk',
-                    price: 50
+                    name: 'Cow Milk',
+                    price: 0
                 },
                 {
                     type: 'sugar',
                     id: 1,
-                    name: 'just sugar',
-                    price: 50
+                    name: 'Just Sugar',
+                    price: 0
                 }
             ]
         },
@@ -62,14 +63,14 @@ function MenuPage() {
                 {
                     type: 'milk',
                     id: 1,
-                    name: 'cow_milk',
-                    price: 50
+                    name: 'Cow Milk',
+                    price: 0
                 },
                 {
                     type: 'sugar',
                     id: 1,
-                    name: 'just sugar',
-                    price: 50
+                    name: 'Just Sugar',
+                    price: 0
                 }
             ]
         },
@@ -83,14 +84,14 @@ function MenuPage() {
                 {
                     type: 'milk',
                     id: 1,
-                    name: 'cow_milk',
-                    price: 50
+                    name: 'Cow Milk',
+                    price: 0
                 },
                 {
                     type: 'sugar',
                     id: 1,
-                    name: 'just sugar',
-                    price: 50
+                    name: 'Just Sugar',
+                    price: 0
                 }
             ]
         },
@@ -104,14 +105,14 @@ function MenuPage() {
                 {
                     type: 'milk',
                     id: 1,
-                    name: 'cow_milk',
-                    price: 50
+                    name: 'Cow Milk',
+                    price: 0
                 },
                 {
                     type: 'sugar',
                     id: 1,
-                    name: 'just sugar',
-                    price: 50
+                    name: 'Just Sugar',
+                    price: 0
                 }
             ]
         },
@@ -125,14 +126,14 @@ function MenuPage() {
                 {
                     type: 'milk',
                     id: 1,
-                    name: 'cow_milk',
-                    price: 50
+                    name: 'Cow Milk',
+                    price: 0
                 },
                 {
                     type: 'sugar',
                     id: 1,
-                    name: 'just sugar',
-                    price: 50
+                    name: 'Just Sugar',
+                    price: 0
                 }
             ]
         },
@@ -146,14 +147,14 @@ function MenuPage() {
                 {
                     type: 'milk',
                     id: 1,
-                    name: 'cow_milk',
-                    price: 50
+                    name: 'Cow Milk',
+                    price: 0
                 },
                 {
                     type: 'sugar',
                     id: 1,
-                    name: 'just sugar',
-                    price: 50
+                    name: 'Just Sugar',
+                    price: 0
                 }
             ]
         },
@@ -167,14 +168,14 @@ function MenuPage() {
                 {
                     type: 'milk',
                     id: 1,
-                    name: 'cow_milk',
-                    price: 50
+                    name: 'Cow Milk',
+                    price: 0
                 },
                 {
                     type: 'sugar',
                     id: 1,
-                    name: 'just sugar',
-                    price: 50
+                    name: 'Just Sugar',
+                    price: 0
                 }
             ]
         },
@@ -188,14 +189,14 @@ function MenuPage() {
                 {
                     type: 'milk',
                     id: 1,
-                    name: 'cow_milk',
-                    price: 50
+                    name: 'Cow Milk',
+                    price: 0
                 },
                 {
                     type: 'sugar',
                     id: 1,
-                    name: 'just sugar',
-                    price: 50
+                    name: 'Just Sugar',
+                    price: 0
                 }
             ]
         },
@@ -209,14 +210,14 @@ function MenuPage() {
                 {
                     type: 'milk',
                     id: 1,
-                    name: 'cow_milk',
-                    price: 50
+                    name: 'Cow Milk',
+                    price: 0
                 },
                 {
                     type: 'sugar',
                     id: 1,
-                    name: 'just sugar',
-                    price: 50
+                    name: 'Just Sugar',
+                    price: 0
                 }
             ]
         },
@@ -230,14 +231,14 @@ function MenuPage() {
                 {
                     type: 'milk',
                     id: 1,
-                    name: 'cow_milk',
-                    price: 50
+                    name: 'Cow Milk',
+                    price: 0
                 },
                 {
                     type: 'sugar',
                     id: 1,
-                    name: 'just sugar',
-                    price: 50
+                    name: 'Just Sugar',
+                    price: 0
                 }
             ]
         },
@@ -251,18 +252,22 @@ function MenuPage() {
                 {
                     type: 'milk',
                     id: 1,
-                    name: 'cow_milk',
-                    price: 50
+                    name: 'Cow Milk',
+                    price: 0
                 },
                 {
                     type: 'sugar',
                     id: 1,
-                    name: 'just sugar',
-                    price: 50
+                    name: 'Just Sugar',
+                    price: 0
                 }
             ]
         }
     ];
+
+    useEffect(() => {
+        order.forEach(basketItem => (document.getElementById(`item-${basketItem.productId}`) as HTMLInputElement).checked = true);
+    }, [order]);
 
     const generateItemId = () => new Date().getTime() - new Date('2024-05-10T23:00:00').getTime();
 

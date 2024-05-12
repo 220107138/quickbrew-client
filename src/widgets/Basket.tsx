@@ -5,6 +5,15 @@ function Basket(props: {
     price: number,
     children: any
 }) {
+    const renderBuyButton = () => props.price > 0 ? (
+        <Button
+            type='textGreen'
+            onClick={ () => console.log('Thanks! Come again!') }
+        >
+            Buy
+        </Button>
+    ) : null;
+
     return (
         <section className={ styles.root }>
             <header>
@@ -16,12 +25,7 @@ function Basket(props: {
             </div>
             <footer>
                 <span className={ styles.desktop }>Total: { props.price } ₸</span>
-                <Button
-                    type='textGreen'
-                    onClick={ () => console.log('Thanks! Come again!') }
-                >
-                    Buy
-                </Button>
+                { renderBuyButton() }
             </footer>
         </section>
     );

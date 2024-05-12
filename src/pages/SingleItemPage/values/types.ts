@@ -19,7 +19,7 @@ export interface Category {
   
 export interface CategoryCarouselProps {
     category: Category;
-    selectedValue: Addition | null;
+    selectedValue: Addition | null | undefined;
     onSelect: (child: Addition| null) => void;
     updatePrice: (price: number) => void;
 }
