@@ -1,8 +1,7 @@
-import { Addition } from "../values"
+import { SelectedAddition } from "../../../shared/values/types"
+import { BasketItemType } from "../../../shared/values/types"
 
 export interface Builder{
-    addMilk(milk: Addition): void
-    addToppings(topping: Addition): void
-    addSugar(sugar: Addition): void
-    setSize(topping: Addition): void
+    addAdditions(additions: SelectedAddition[]): void
+    getDrink(): BasketItemType
 }
