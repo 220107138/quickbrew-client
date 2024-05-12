@@ -1,23 +1,23 @@
 import { Card } from 'primereact/card';
+import { BasketItemType } from '../../../shared/values/types';
 
-type props = {
-  id: number,
-  price: number,
-  updatePrice(price: number): void
+interface props{
+  item: BasketItemType | undefined,
+  price: number | undefined
 }
 
-export function SingleItem(props: props) {
+export function SingleItem(item: props) {
 
       const header = (
         <div className='col-12 d-flex flex-md-column'>
           <img
             alt="Card"
             className='col-7 col-md-12'
-            src="https://globalassets.starbucks.com/digitalassets/products/bev/SBX20190617_CaffeLatte.jpg?impolicy=1by1_wide_topcrop_630"
+            src={item.item?.image}
           />
           <div className='col-3 col-md-12 d-flex flex-column'>
-            <span className='fs-4 fw-bolder m-3'>Latte</span>
-            <span className='m-3'>description</span>
+            <span className='fs-4 fw-bolder m-3'>{item.item?.name}</span>
+            <span className='m-3'>{item.item?.name}</span>
           </div>
         </div>
       );
@@ -27,7 +27,7 @@ export function SingleItem(props: props) {
             <div className='d-flex justify-content-between align-items-center'>
                 <div className='w-50  text-end'>
                     <span className='fs-4 fw-bolder'>
-                        {props.price} ТГ
+                        {item.price} ТГ
                     </span>
                 </div>
             </div>

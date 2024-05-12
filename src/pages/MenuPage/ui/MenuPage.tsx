@@ -13,7 +13,7 @@ function MenuPage() {
         {
             id: 0,
             name: 'Latte',
-            image: '/img.png',
+            image: 'https://globalassets.starbucks.com/digitalassets/products/bev/SBX20190617_CaffeLatte.jpg?impolicy=1by1_wide_topcrop_630',
             type: 'coffee',
             defaultPrice: 1000,
             defaultAdditions: [
@@ -34,7 +34,7 @@ function MenuPage() {
         {
             id: 1,
             name: 'Latte',
-            image: '/img.png',
+            image: 'https://globalassets.starbucks.com/digitalassets/products/bev/SBX20190617_CaffeLatte.jpg?impolicy=1by1_wide_topcrop_630',
             type: 'coffee',
             defaultPrice: 1000,
             defaultAdditions: [
@@ -55,7 +55,7 @@ function MenuPage() {
         {
             id: 2,
             name: 'Latte',
-            image: '/img.png',
+            image: 'https://globalassets.starbucks.com/digitalassets/products/bev/SBX20190617_CaffeLatte.jpg?impolicy=1by1_wide_topcrop_630',
             type: 'coffee',
             defaultPrice: 1000,
             defaultAdditions: [
@@ -76,7 +76,7 @@ function MenuPage() {
         {
             id: 3,
             name: 'Latte',
-            image: '/img.png',
+            image: 'https://globalassets.starbucks.com/digitalassets/products/bev/SBX20190617_CaffeLatte.jpg?impolicy=1by1_wide_topcrop_630',
             type: 'coffee',
             defaultPrice: 1000,
             defaultAdditions: [
@@ -97,7 +97,7 @@ function MenuPage() {
         {
             id: 4,
             name: 'Latte',
-            image: '/img.png',
+            image: 'https://globalassets.starbucks.com/digitalassets/products/bev/SBX20190617_CaffeLatte.jpg?impolicy=1by1_wide_topcrop_630',
             type: 'coffee',
             defaultPrice: 1000,
             defaultAdditions: [
@@ -118,7 +118,7 @@ function MenuPage() {
         {
             id: 5,
             name: 'Latte',
-            image: '/img.png',
+            image: 'https://globalassets.starbucks.com/digitalassets/products/bev/SBX20190617_CaffeLatte.jpg?impolicy=1by1_wide_topcrop_630',
             type: 'coffee',
             defaultPrice: 1000,
             defaultAdditions: [
@@ -139,7 +139,7 @@ function MenuPage() {
         {
             id: 6,
             name: 'Latte',
-            image: '/img.png',
+            image: 'https://globalassets.starbucks.com/digitalassets/products/bev/SBX20190617_CaffeLatte.jpg?impolicy=1by1_wide_topcrop_630',
             type: 'lemonade',
             defaultPrice: 1000,
             defaultAdditions: [
@@ -160,7 +160,7 @@ function MenuPage() {
         {
             id: 7,
             name: 'Latte',
-            image: '/img.png',
+            image: 'https://globalassets.starbucks.com/digitalassets/products/bev/SBX20190617_CaffeLatte.jpg?impolicy=1by1_wide_topcrop_630',
             type: 'lemonade',
             defaultPrice: 1000,
             defaultAdditions: [
@@ -181,7 +181,7 @@ function MenuPage() {
         {
             id: 8,
             name: 'Latte',
-            image: '/img.png',
+            image: 'https://globalassets.starbucks.com/digitalassets/products/bev/SBX20190617_CaffeLatte.jpg?impolicy=1by1_wide_topcrop_630',
             type: 'lemonade',
             defaultPrice: 1000,
             defaultAdditions: [
@@ -202,7 +202,7 @@ function MenuPage() {
         {
             id: 9,
             name: 'Latte',
-            image: '/img.png',
+            image: 'https://globalassets.starbucks.com/digitalassets/products/bev/SBX20190617_CaffeLatte.jpg?impolicy=1by1_wide_topcrop_630',
             type: 'lemonade',
             defaultPrice: 1000,
             defaultAdditions: [
@@ -223,7 +223,7 @@ function MenuPage() {
         {
             id: 10,
             name: 'Latte',
-            image: '/img.png',
+            image: 'https://globalassets.starbucks.com/digitalassets/products/bev/SBX20190617_CaffeLatte.jpg?impolicy=1by1_wide_topcrop_630',
             type: 'lemonade',
             defaultPrice: 1000,
             defaultAdditions: [
@@ -244,7 +244,7 @@ function MenuPage() {
         {
             id: 11,
             name: 'Latte',
-            image: '/img.png',
+            image: 'https://globalassets.starbucks.com/digitalassets/products/bev/SBX20190617_CaffeLatte.jpg?impolicy=1by1_wide_topcrop_630',
             type: 'tea',
             defaultPrice: 1000,
             defaultAdditions: [
