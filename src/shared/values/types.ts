@@ -1,12 +1,3 @@
-export type MenuProductResponse = {
-    id: number,
-    name: string,
-    type: string,
-    defaultPrice: number,
-    image: string,
-    defaultAdditions: SelectedAddition[]
-};
-
 export type BasketItemType = {
     id: number,
     productId: number,

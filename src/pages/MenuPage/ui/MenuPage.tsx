@@ -77,16 +77,18 @@ function MenuPage() {
             defaultPrice: 1000,
             defaultAdditions: [
                 {
-                    type: 'milk',
                     id: 1,
                     name: 'Cow Milk',
-                    price: 0
+                    type: 'milk',
+                    price: 0,
+                    image: undefined
                 },
                 {
-                    type: 'sugar',
                     id: 1,
-                    name: 'Just Sugar',
-                    price: 0
+                    name: 'Cow Milk',
+                    type: 'milk',
+                    price: 0,
+                    image: undefined
                 }
             ]
         },
