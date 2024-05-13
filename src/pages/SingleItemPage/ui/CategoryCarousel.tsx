@@ -31,7 +31,7 @@ export function CategoryCarousel({ category, selectedValue, onSelect, updatePric
               position: 'relative',
               border: selectedValue && selectedValue.id === child.id ? '2px solid #243832' : '2px solid transparent',
               cursor: 'pointer',
-              borderRadius: '6px'
+              borderRadius: '20px'
             }}
             onClick={() => handleCardClick(child)}
           >
@@ -39,7 +39,7 @@ export function CategoryCarousel({ category, selectedValue, onSelect, updatePric
               <img src={child.image} alt={child.type} className='w-100' />
               <p style={{ color: '#243832', fontSize: '16px', fontWeight: 'bold' }}>{child.name}</p>
             </div>
-            <div className={child.price > 0? 'p-1 p-md-2' : 'd-none'} style={{ color: '#f5f5f5', backgroundColor: '#243832', zIndex: '999', borderRadius: '20px', fontWeight: 'bold', position: 'absolute', bottom: '-25px', right: '-20px' }}>
+            <div className={child.price > 0? 'p-1 p-md-2' : 'd-none'} style={{ color: '#f5f5f5', backgroundColor: '#243832', zIndex: '999', borderRadius: '10px', fontWeight: 'bold', position: 'absolute', bottom: '-25px', right: '-20px' }}>
               + {child.price}
             </div>
           </div>
