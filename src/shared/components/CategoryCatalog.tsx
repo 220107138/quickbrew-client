@@ -1,6 +1,6 @@
 import styles from './style_modules/CategoryCatalog.module.css';
 
-function CategoryCatalog(props: {
+export function CategoryCatalog(props: {
     category: string,
     children: any
 }) {
@@ -33,5 +33,3 @@ function CategoryCatalog(props: {
         </section>
     );
 }
-
-export default CategoryCatalog;

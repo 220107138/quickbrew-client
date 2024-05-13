@@ -1,7 +1,7 @@
 import { Options } from "../values";
 import { CategoryCarousel } from "./CategoryCarousel";
 import { useState, useEffect } from "react";
-import { SelectedAddition } from "../../../shared/values/types";
+import { SelectedAddition } from "../../../shared";
 
 interface SingleItemOptions {
     additions: SelectedAddition[] | undefined

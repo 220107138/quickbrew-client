@@ -2,8 +2,7 @@ import { SingleItem } from "./SingleItem";
 import { SingleItemOptions } from "./SingleItemOptions";
 import { useParams } from 'react-router-dom';
 import { useState } from "react";
-import { useOrder } from "../../../shared/values/OrderProvider";
-import { BasketItemType } from "../../../shared/values/types";
+import { useOrder, BasketItemType} from "../../../shared";
 
 export function SingleItemPage() {
   const { id } = useParams(); 

@@ -1,5 +1,3 @@
-import { SelectedAddition } from '../../../shared/values/types';
-import styles from './style_modules/CheckItem.module.css';
 import { BasketItemType } from '../../../shared/values/types';
 
 interface CheckItemType{

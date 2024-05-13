@@ -1,8 +1,8 @@
-import Button from '../shared/Button';
+import {Button} from './Button';
 import styles from './style_modules/Basket.module.css';
 import { Link } from 'react-router-dom';
 
-function Basket(props: {
+export function Basket(props: {
     price: number,
     children: any
 }) {
@@ -33,5 +33,3 @@ function Basket(props: {
         </section>
     );
 }
-
-export default Basket;

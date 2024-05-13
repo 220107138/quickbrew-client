@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
-import Button from '../shared/Button';
-import { BasketItemType } from '../shared/values/types';
+import {Button} from './Button';
+import { BasketItemType } from '../values/types';
 import styles from './style_modules/BasketItem.module.css';
 
-function BasketItem(props: {
+export function BasketItem(props: {
     item: BasketItemType,
     onGreen: (item: BasketItemType) => void,
     onRed: (item: BasketItemType) => void
@@ -60,6 +60,4 @@ function BasketItem(props: {
             </div>
         </div>
     );
-}
-
-export default BasketItem;
+};

@@ -1,4 +1,4 @@
-import { SelectedAddition } from "../../../shared/values/types";
+import { SelectedAddition } from "../../../shared";
   
 export interface Category {
    id: number;

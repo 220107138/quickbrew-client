@@ -1,7 +1,7 @@
-import { SelectedAddition } from '../shared/values/types';
+import { SelectedAddition } from '../values';
 import styles from './style_modules/ItemCard.module.css';
 
-function ItemCard(props: {
+export function ItemCard(props: {
     id: number,
     name: string,
     price: number,
@@ -33,5 +33,3 @@ function ItemCard(props: {
         </label>
     );
 }
-
-export default ItemCard;

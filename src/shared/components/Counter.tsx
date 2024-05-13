@@ -1,8 +1,8 @@
 import { useRef, useState } from 'react';
-import Button from '../shared/Button';
+import { Button } from './Button';
 import styles from './style_modules/Counter.module.css';
 
-function Counter(props: {max: number}) {
+export function Counter(props: {max: number}) {
     const [countValue, setCountValue] = useState(0);
     const countRef = useRef<HTMLSpanElement>(null);
     const rootRef = useRef<HTMLDivElement>(null);
@@ -59,5 +59,3 @@ function Counter(props: {max: number}) {
         </div>
     );
 }
-
-export default Counter;
