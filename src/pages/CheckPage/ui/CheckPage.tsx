@@ -1,8 +1,6 @@
-import { Link } from 'react-router-dom';
-import { useOrder } from '../../../shared/values/OrderProvider';
+import { useOrder } from '../../../shared';
 import CheckItem from './CheckItem';
 import styles from './style_modules/CheckPage.module.css';
-import {Button} from 'primereact/button'
 
 
 function CheckPage() {
