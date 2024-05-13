@@ -6,6 +6,7 @@ import MenuPage from './pages/MenuPage/ui/MenuPage';
 import { SingleItemPage } from './pages/SingleItemPage/ui/SingleItemPage';
 import {createBrowserRouter, RouterProvider } from "react-router-dom";
 import OrderProvider from './shared/values/OrderProvider';
+import CheckPage from './pages/CheckPage/ui/CheckPage';
 
 function App() {    
     const router = createBrowserRouter([
@@ -17,6 +18,10 @@ function App() {
             path: "/singleItem/:id",
             element: <SingleItemPage/>,
         },
+        {
+            path: '/check',
+            element: <CheckPage/>
+        }
     ]);
 
     return (

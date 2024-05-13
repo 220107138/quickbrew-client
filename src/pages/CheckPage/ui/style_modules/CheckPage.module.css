@@ -1,6 +1,47 @@
 .root {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     font-family: IBM Plex Mono, monospace;
-    
+    width: 500px;
+}
+
+.border {
+    position: relative;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.border:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    background: 
+        linear-gradient(-45deg, #283c34 16px, transparent 0), 
+        linear-gradient(45deg, #283c34 16px, transparent 0);
+    background-position: left bottom;
+    background-size: 32px 32px;
+    background-repeat: repeat-x;
+}
+
+.scrollableBody {
+    display: block;
+    overflow-y: scroll;
+    height: 300px;
+    overflow-x: hidden;
+}
+
+.scrollableBody::-webkit-scrollbar {
+    display: none;
+}
+
+
+@media (max-width: 720px) {
+    .root {
+        width: 300px;
+    }
 }
