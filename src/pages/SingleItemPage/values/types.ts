@@ -14,23 +14,6 @@ export interface CategoryCarouselProps {
     updatePrice: (price: number) => void;
 }
 
-export type Options = {
-    options: 
-        {
-            id: number,
-            name: string,
-            image: string,
-            children:
-                {
-                    type: string,
-                    id: number,
-                    name: string,
-                    price: number,
-                    image?: string
-                }[]
-        }[]
-}
-
 export type Ingredient = {
     name: string;   
     type: string;
