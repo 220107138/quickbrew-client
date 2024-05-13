@@ -4,6 +4,8 @@ import { SelectedAddition } from '../../../shared';
 
 export function CategoryCarousel({ category, selectedValue, onSelect, updatePrice }: CategoryCarouselProps) {
 
+  console.log(selectedValue, 'selectedBV')
+
   const handleCardClick = (child: SelectedAddition) => {
     if(!selectedValue){
       onSelect(child)
