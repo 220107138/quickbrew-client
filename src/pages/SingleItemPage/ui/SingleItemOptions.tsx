@@ -159,9 +159,9 @@ export function SingleItemOptions(props: SingleItemOptions){
       <div>
         {items.additions.map((item: any) => (
           <CategoryCarousel
-            key={item.type}
+            key={item.id}
             category={item}
-            selectedValue={selectedItems.find(selectedItem => selectedItem.type === item.name) || null}
+            selectedValue={selectedItems.find(selectedItem => selectedItem.type === item.type) || null}
             onSelect={(selectedChild) => handleSelect(selectedChild)}
             updatePrice={props.updatePrice}
           />
