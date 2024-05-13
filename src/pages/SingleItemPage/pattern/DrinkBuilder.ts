@@ -1,6 +1,5 @@
-import { SelectedAddition } from './../../../shared/values/types';
+import { SelectedAddition, BasketItemType } from './../../../shared';
 import { Builder } from "./Builder";
-import { BasketItemType } from './../../../shared/values/types';
 
 export class DrinkBuilder implements Builder{
 

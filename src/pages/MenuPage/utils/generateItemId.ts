@@ -1,0 +1,1 @@
+export const generateItemId = () => new Date().getTime() - new Date('2024-05-10T23:00:00').getTime();

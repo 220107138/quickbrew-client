@@ -1,5 +1,4 @@
-import { SelectedAddition } from './../../../shared/values/types'
-import { BasketItemType } from './../../../shared/values/types'
+import { SelectedAddition , BasketItemType } from './../../../shared/values/types'
 import { DrinkBuilder } from '../pattern/DrinkBuilder'
 
 export const buildDrink = (drink: BasketItemType, additons: SelectedAddition[]) =>{

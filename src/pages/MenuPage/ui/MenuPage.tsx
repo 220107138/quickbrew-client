@@ -1,12 +1,7 @@
-import CategoryCatalog from '../../../widgets/CategoryCatalog';
-import ItemCard from '../../../widgets/ItemCard';
-import Basket from '../../../widgets/Basket';
-import BasketItem from '../../../widgets/BasketItem';
-import { MenuProductResponse, BasketItemType } from '../../../shared/values/types';
-import Prototype from '../prtotype/Prototype';
+import { ItemCard, CategoryCatalog, Basket, BasketItem, MenuProductResponse, BasketItemType, useOrder } from '../../../shared';
 import styles from './MenuPage.module.css';
-import { useOrder } from '../../../shared/values/OrderProvider';
 import { useEffect } from 'react';
+import { addItemToBasket, removeItemsFromBasket, duplicateItemInBasket, removeSingleItemFromBasket } from '../utils';
 
 function MenuPage() {
     const { order, setOrder } = useOrder();
@@ -269,45 +264,6 @@ function MenuPage() {
         order.forEach(basketItem => (document.getElementById(`item-${basketItem.productId}`) as HTMLInputElement).checked = true);
     }, [order]);
 
-    const generateItemId = () => new Date().getTime() - new Date('2024-05-10T23:00:00').getTime();
-
-    // добавить элемент, доступно из слайдера
-    const addItemToBasket = (item: MenuProductResponse) => setOrder(
-        prevOrder => [...prevOrder, {
-            id: generateItemId(),
-            productId: item.id,
-            name: item.name,
-            type: item.type,
-            image: item.image,
-            defaultPrice: item.defaultPrice,
-            additions: item.defaultAdditions,
-            priceWithAdditions: item.defaultAdditions.reduce((recursion, addition) => recursion + addition.price, item.defaultPrice)
-        }]
-    );
-
-    // удалить все экзампляры продукта, доступно из слайдера
-    const removeItemsFromBasket = (item: MenuProductResponse) => setOrder(
-        prevOrder => prevOrder.filter(basketItem => basketItem.productId !== item.id)
-    );
-
-    // дублировать экземпляр продукта, доступно из корзины
-    const duplicateItemInBasket = (item: BasketItemType) => {
-        const clone = new Prototype<BasketItemType>(item).getClone();
-        clone.id = generateItemId();
-        setOrder(
-            prevOrder => [...prevOrder, clone]
-        )
-    };
-
-    // удалить экземпляр продукта, доступно из корзины
-    const removeSingleItemFromBasket = (item: BasketItemType) => {
-        if (order.filter(basketItem => basketItem.productId === item.productId).length === 1)
-            (document.getElementById(`item-${item.productId}`) as HTMLInputElement).checked = false;
-        
-        setOrder(prevOrder =>
-            prevOrder.filter(basketItem => basketItem.id !== item.id)
-        );
-    };
 
     return (
         <main className={ styles.root }>
@@ -321,8 +277,8 @@ function MenuPage() {
                             img={ coffee.image }
                             price={ coffee.defaultPrice }
                             additions={ coffee.defaultAdditions }
-                            onTrue={ () => addItemToBasket(coffee) }
-                            onFalse={ () => removeItemsFromBasket(coffee) }
+                            onTrue={ () => addItemToBasket(coffee, setOrder) }
+                            onFalse={ () => removeItemsFromBasket(coffee, setOrder) }
                         />
                     ) }
                 </CategoryCatalog>
@@ -335,8 +291,8 @@ function MenuPage() {
                             img={ tea.image }
                             price={ tea.defaultPrice }
                             additions={ tea.defaultAdditions }
-                            onTrue={ () => addItemToBasket(tea) }
-                            onFalse={ () => removeItemsFromBasket(tea) }
+                            onTrue={ () => addItemToBasket(tea, setOrder) }
+                            onFalse={ () => removeItemsFromBasket(tea, setOrder) }
                         />
                     ) }
                 </CategoryCatalog>
@@ -349,8 +305,8 @@ function MenuPage() {
                             img={ lemonade.image }
                             price={ lemonade.defaultPrice }
                             additions={ lemonade.defaultAdditions }
-                            onTrue={ () => addItemToBasket(lemonade) }
-                            onFalse={ () => removeItemsFromBasket(lemonade) }
+                            onTrue={ () => addItemToBasket(lemonade, setOrder) }
+                            onFalse={ () => removeItemsFromBasket(lemonade, setOrder) }
                         />
                     ) }
                 </CategoryCatalog>
@@ -363,8 +319,8 @@ function MenuPage() {
                             img={ snack.image }
                             price={ snack.defaultPrice }
                             additions={ snack.defaultAdditions }
-                            onTrue={ () => addItemToBasket(snack) }
-                            onFalse={ () => removeItemsFromBasket(snack) }
+                            onTrue={ () => addItemToBasket(snack, setOrder) }
+                            onFalse={ () => removeItemsFromBasket(snack, setOrder) }
                         />
                     ) }
                 </CategoryCatalog>
@@ -374,8 +330,8 @@ function MenuPage() {
                     <BasketItem
                         key={ item.id }
                         item={ item }
-                        onGreen={ item => duplicateItemInBasket(item) }
-                        onRed={ item => removeSingleItemFromBasket(item) }
+                        onGreen={ item => duplicateItemInBasket(item, setOrder) }
+                        onRed={ item => removeSingleItemFromBasket(item, order, setOrder) }
                     />
                 ) }
             </Basket>

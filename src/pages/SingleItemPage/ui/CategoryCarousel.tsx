@@ -1,6 +1,6 @@
-import styles from '../../../widgets/style_modules/CategoryCatalog.module.css';
+import styles from '../../../shared/components/style_modules/CategoryCatalog.module.css';
 import { CategoryCarouselProps } from '../values';
-import { SelectedAddition } from '../../../shared/values/types';
+import { SelectedAddition } from '../../../shared';
 
 export function CategoryCarousel({ category, selectedValue, onSelect, updatePrice }: CategoryCarouselProps) {
 
