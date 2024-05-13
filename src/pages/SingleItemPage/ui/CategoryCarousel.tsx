@@ -35,11 +35,11 @@ export function CategoryCarousel({ category, selectedValue, onSelect, updatePric
             }}
             onClick={() => handleCardClick(child)}
           >
-            <div className="card" style={{ backgroundColor: '#f5f5f5' }}>
+            <div className={styles.desktopCard} style={{ backgroundColor: '#f5f5f5', flexDirection: 'column' }}>
               <img src={child.image} alt={child.type} className='w-100' />
               <p style={{ color: '#243832', fontSize: '16px', fontWeight: 'bold' }}>{child.name}</p>
             </div>
-            <div style={{ color: '#f5f5f5', backgroundColor: '#243832', zIndex: '999', borderRadius: '10px', fontSize: '20px', fontWeight: 'bold', position: 'absolute', bottom: '-25px', right: '-20px', padding: '8px' }}>
+            <div className={child.price > 0? 'p-1 p-md-2' : 'd-none'} style={{ color: '#f5f5f5', backgroundColor: '#243832', zIndex: '999', borderRadius: '20px', fontWeight: 'bold', position: 'absolute', bottom: '-25px', right: '-20px' }}>
               + {child.price}
             </div>
           </div>
